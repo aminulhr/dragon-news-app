@@ -1,7 +1,7 @@
 const Center = () => {
   return (
-    <div className="border border-amber-400">
-      <h1>News comeing soon.....</h1>
+    <div>
+      <h1 className="text-3xl">Lorem ipsum dolor sit</h1>
     </div>
   );
 };

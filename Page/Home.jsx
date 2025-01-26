@@ -1,5 +1,6 @@
 import Header from "../src/Componensts/Header.jsx";
 import Navbar from "../src/Componensts/Navbar";
+import BrakingNews from "./BrakingNews.jsx";
 import Center from "./Center.jsx";
 import LeftSide from "./LeftSide.jsx";
 import RightSide from "./RightSide.jsx";
@@ -8,11 +9,18 @@ const Home = () => {
   return (
     <div className=" font-poppins ">
       <Header></Header>
+      <BrakingNews></BrakingNews>
       <Navbar></Navbar>
-      <div className="md:grid grid-cols-3 gap-6">
-        <LeftSide></LeftSide>
-        <Center></Center>
-        <RightSide></RightSide>
+      <div className="md:grid grid-cols-4 gap-6 ">
+        <div>
+          <LeftSide></LeftSide>
+        </div>
+        <div className="col-span-2 border border-amber-400">
+          <Center></Center>
+        </div>
+        <div>
+          <RightSide></RightSide>
+        </div>
       </div>
     </div>
   );
