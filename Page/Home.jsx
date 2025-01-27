@@ -7,7 +7,7 @@ import RightSide from "./RightSide.jsx";
 
 const Home = () => {
   return (
-    <div className=" font-poppins ">
+    <div className=" font-poppins bg-white text-black">
       <Header></Header>
       <BrakingNews></BrakingNews>
       <Navbar></Navbar>
@@ -15,7 +15,7 @@ const Home = () => {
         <div>
           <LeftSide></LeftSide>
         </div>
-        <div className="col-span-2 border border-amber-400">
+        <div className="col-span-2">
           <Center></Center>
         </div>
         <div>

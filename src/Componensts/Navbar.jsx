@@ -1,21 +1,26 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import userPhoto from "../assets/dragon-assets/user.png";
+
 const Navbar = () => {
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login"; // Ensure this matches your route path
+
   const navlinks = (
     <>
-      <li>
+      <li className="text-[18px] text-[#706F6F]">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="text-[18px] text-[#706F6F]">
         <NavLink to="/about">About</NavLink>
       </li>
-      <li>
+      <li className="text-[18px] text-[#706F6F]">
         <NavLink to="/career">Career</NavLink>
       </li>
     </>
   );
+
   return (
-    <div className="navbar bg-base-100">
+    <div className={`navbar ${isLoginPage ? "bg-[#F3F3F3]" : "bg-white"}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +59,9 @@ const Navbar = () => {
           />
         </div>
         <Link to="/login">
-          <button className="w-36 h-11 text-xl bg-base-400">Login</button>
+          <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
+            Login
+          </button>
         </Link>
       </div>
     </div>
