@@ -13,6 +13,7 @@ const Register = () => {
     const file = form.get("file");
     const email = form.get("email");
     const password = form.get("password");
+    console.log(name, file, email, password);
 
     createUser(email, password)
       .then((result) => {

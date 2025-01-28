@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
 import Navbar from "../src/Componensts/Navbar";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogInForm = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -9,6 +13,13 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        console.log(result);
+        e.target.reset();
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div>
@@ -51,7 +62,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6 text-center">
-                <button className="btn  w-full">Login</button>
+                <button className="btn  w-full ">Login</button>
                 <p className="mt-4">
                   <Link to="/register">
                     <a href="http://">

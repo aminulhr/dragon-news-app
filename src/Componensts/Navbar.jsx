@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider";
 import userPhoto from "../assets/dragon-assets/user.png";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login"; // Ensure this matches your route path
+  const isLoginPage = location.pathname === "/login";
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
 
   const navlinks = (
     <>
@@ -58,16 +64,27 @@ const Navbar = () => {
             src={userPhoto}
           />
         </div>
-        <Link to="/login">
-          <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
-            Login
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]"
+          >
+            Logout
           </button>
-        </Link>
-        <Link to="/register">
-          <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
-            Sign Up
-          </button>
-        </Link>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
+                Login
+              </button>
+            </Link>
+            <Link to="/register">
+              <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
+                Sign Up
+              </button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import Header from "../src/Componensts/Header.jsx";
 import Navbar from "../src/Componensts/Navbar";
 import BrakingNews from "./BrakingNews.jsx";
@@ -6,6 +7,8 @@ import LeftSide from "./LeftSide.jsx";
 import RightSide from "./RightSide.jsx";
 
 const Home = () => {
+  const news = useLoaderData();
+  console.log(news);
   return (
     <div className=" font-poppins bg-white text-black">
       <Header></Header>
