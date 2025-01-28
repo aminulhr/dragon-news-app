@@ -6,7 +6,9 @@ const Login = () => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
-    console.log(form.get("password"));
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
   };
   return (
     <div>
@@ -25,6 +27,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email address"
                   className="input input-bordered w-full bg-[#F3F3F3]"
                   required
@@ -36,6 +39,7 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="Enter your password"
                   className="input input-bordered w-full bg-[#F3F3F3]"
                   required

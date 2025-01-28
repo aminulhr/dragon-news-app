@@ -10,8 +10,16 @@ const LeftSide = () => {
   }, []);
   return (
     <div className=" space-y-8  ">
-      <h1 className="text-xl font-bold">All Caterogy</h1>
-      <h1 className="text-xl font-bold text-center bg-amber-100 p-4 m-4">
+      {/* <h1 className="text-xl font-bold">All Caterogy</h1> */}
+      <div className="indicator">
+        <span className="indicator-item badge badge-primary">
+          {categories.length}
+        </span>
+        <div className="bg-gray-300 p-2  grid text-xl font-bold ">
+          All Category
+        </div>
+      </div>
+      <h1 className="text-xl font-bold text-center bg-amber-100 p-3 m-3">
         National News
       </h1>
       {categories.map((categorie) => (
