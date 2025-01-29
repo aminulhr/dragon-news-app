@@ -73,11 +73,6 @@ const Navbar = () => {
           </button>
         ) : (
           <>
-            <Link to="/login">
-              <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
-                Login
-              </button>
-            </Link>
             <Link to="/register">
               <button className="w-36 h-11  text-xl text-white ml-2 bg-[#403F3F]">
                 Sign Up
