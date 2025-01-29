@@ -9,8 +9,8 @@ const DetailseNews = () => {
     <div>
       <Header></Header>
       <Navbar></Navbar>
-      <div className="gird md:grid-cols-4 text-black">
-        <div className="col-span-3">
+      <div className=" flex text-black">
+        <div className=" w-10/12    ">
           <h1 className="text-4xl">neesssss</h1>
           <p>{id}</p>
         </div>
