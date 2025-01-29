@@ -24,7 +24,7 @@ const Center = ({ news }) => {
 
       <p className="text-xl font-bold p-5 text-[#403F3F]">{title}</p>
       <figure>
-        <img src={image_url} alt="image_url" />
+        <img className="w-[518px] h-[262px]" src={image_url} alt="image_url" />
       </figure>
       <div className="card-body">
         {details.length > 200 ? (

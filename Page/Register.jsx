@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 import Navbar from "../src/Componensts/Navbar";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext); // Updated function name
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogInForm = (e) => {
     e.preventDefault();
@@ -19,6 +20,8 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result);
+        e.target.reset();
+        navigate(location?.state ? location.state : "/");
         // Handle successful registration (e.g., redirect to login page)
       })
       .catch((error) => {
